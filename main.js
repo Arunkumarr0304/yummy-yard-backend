@@ -2,6 +2,10 @@ import express from "express";
 import cors from "cors";
 import connectDB from "./lib/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+import orderRoutes from "./routes/orderRoutes.js";
+import billRoutes from "./routes/billRoutes.js";
+import transactionRoutes from "./routes/transactionRoutes.js";
 
 const app = express();
 const PORT = 6969;
@@ -19,6 +23,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/bills", billRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 app.listen(PORT, () => {
     console.log(`The server is running at http://localhost:${PORT}`);
