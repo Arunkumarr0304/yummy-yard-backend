@@ -6,6 +6,7 @@ import dashboardRoutes from "./routes/dashboardRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
 import billRoutes from "./routes/billRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 
 const app = express();
 const PORT = 6969;
@@ -27,6 +28,7 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/bills", billRoutes);
 app.use("/api/transactions", transactionRoutes);
+app.use("/api/products", productRoutes);
 
 app.listen(PORT, () => {
     console.log(`The server is running at http://localhost:${PORT}`);
